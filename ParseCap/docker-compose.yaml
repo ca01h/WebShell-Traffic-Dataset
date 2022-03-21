@@ -1,0 +1,47 @@
+version: '3.2'
+
+services:
+    filebeat:
+        container_name: parsecap_filebeat
+        image: docker.elastic.co/beats/filebeat:7.11.2
+        hostname: filebeat
+        volumes:
+            - ./config/filebeat/modules.d:/usr/share/filebeat/modules.d:ro
+            - ./config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+            #- ./logs/suricata:/var/log/suricata:ro
+            - ./logs/zeek:/var/log/bro/current:ro
+
+    logstash:
+        container_name: parsecap_logstash
+        image: docker.elastic.co/logstash/logstash:7.11.2
+        hostname: logstash
+        environment:
+            - "LS_JAVA_OPTS=-Xms512m -Xmx512m"
+        depends_on: 
+            - filebeat
+        volumes:
+            - ./config/logstash/pipeline:/usr/share/logstash/pipeline:ro
+            #- ./config/logstash/templates:/usr/share/logstash/templates:ro
+            - ./config/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+            - ./config/logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
+            #- ./logs/suricata:/var/log/suricata:ro
+            #- ./logs/zeek:/var/log/zeek/current:ro
+            - ./results:/results
+        expose:
+            - "5044"
+
+    zeek:
+        container_name: parsecap_zeek
+        image: ca01h/zeek:latest
+        hostname: zeek
+        working_dir: /var/log/zeek
+        entrypoint:
+            - /process_pcap_folder.sh
+            - /pcap
+            - local
+            - "Site::local_nets += { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16}"
+        volumes:
+            - ./config/zeek/site:/usr/local/zeek/share/zeek/site:ro
+            - ./pcap:/pcap
+            - ./logs/zeek:/var/log/zeek
+            - ./logs/zeek/extracted_files:/opt/zeek/extracted

@@ -1,0 +1,10 @@
+{"ts":1625045326.587571,"uid":"CqkkZADQTyva1L2wi","id.orig_h":"221.181.185.159","id.orig_p":30465,"id.resp_h":"172.29.233.204","id.resp_p":22,"name":"data_after_reset","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625027093.03869,"uid":"CQftnnSUYfOU3N59f","id.orig_h":"121.229.106.109","id.orig_p":62436,"id.resp_h":"185.106.96.193","id.resp_p":22,"name":"window_recision","notice":false,"peer":"zeek"}
+{"ts":1625027372.509338,"uid":"CTpdK1uhwNgR1N0Gk","id.orig_h":"135.148.52.95","id.orig_p":30120,"id.resp_h":"185.106.96.193","id.resp_p":50008,"name":"connection_originator_SYN_ack","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625027744.519417,"uid":"C1FbKN1nNKbGBiDGSd","id.orig_h":"221.181.185.135","id.orig_p":25272,"id.resp_h":"185.106.96.193","id.resp_p":22,"name":"TCP_ack_underflow_or_misorder","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625027755.027411,"uid":"C1FbKN1nNKbGBiDGSd","id.orig_h":"221.181.185.135","id.orig_p":25272,"id.resp_h":"185.106.96.193","id.resp_p":22,"name":"TCP_seq_underflow_or_misorder","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625027761.145761,"uid":"CQftnnSUYfOU3N59f","id.orig_h":"121.229.106.109","id.orig_p":62436,"id.resp_h":"185.106.96.193","id.resp_p":22,"name":"window_recision","notice":false,"peer":"zeek"}
+{"ts":1625656601.399372,"uid":"C3Uuxw1Iz35gylgRej","id.orig_h":"218.2.216.19","id.orig_p":11289,"id.resp_h":"172.29.233.204","id.resp_p":22,"name":"TCP_ack_underflow_or_misorder","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625656808.010309,"uid":"CtIkWK1M03AL0CtPbk","id.orig_h":"221.181.185.143","id.orig_p":26406,"id.resp_h":"172.29.233.204","id.resp_p":22,"name":"data_after_reset","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625657210.377423,"uid":"CEEAx44qtV5yvmNg5l","id.orig_h":"222.186.42.7","id.orig_p":57162,"id.resp_h":"172.29.233.204","id.resp_p":22,"name":"data_after_reset","notice":false,"peer":"zeek","source":"TCP"}
+{"ts":1625657258.895904,"uid":"CNtrwrAO7n3VDC0Md","id.orig_h":"222.186.42.213","id.orig_p":44242,"id.resp_h":"172.29.233.204","id.resp_p":22,"name":"data_after_reset","notice":false,"peer":"zeek","source":"TCP"}
